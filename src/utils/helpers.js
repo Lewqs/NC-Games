@@ -20,3 +20,8 @@ export const timeDifference = (previous) => {
     return `${Math.round(elapsed / msPerYear)} years ago`;
   }
 };
+
+export const fullDateAndTime = (unixTS) => {
+  const newDate = new Date(unixTS);
+  return `${newDate.toLocaleDateString()} at ${newDate.toLocaleTimeString()}`;
+};
