@@ -2,15 +2,21 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getReviewById } from "../utils/api";
 import { timeDifference } from "../utils/helpers";
+import Loading from "./Loading";
 
 const SingleReview = () => {
   const { review_id } = useParams();
   const [review, setReview] = useState({});
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     getReviewById(review_id).then((data) => {
       setReview(data);
+      setLoading(false);
     });
   }, [review_id, review.owner]);
+
+  if (loading) return <Loading />;
+
   return (
     <section className="review">
       <h2 className="review-title">{review.title}</h2>

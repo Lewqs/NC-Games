@@ -5,7 +5,6 @@ const ReviewCard = ({ review }) => {
   return (
     <>
       <br />
-
       <Link to={`/reviews/${review.review_id}`}>
         <article className="review-card">
           <img
