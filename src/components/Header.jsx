@@ -5,11 +5,11 @@ const Header = () => {
   return (
     <header>
       <div className="header_title">
-        <h1 onClick={() => navigate("/")}>NC Games Reviews</h1>
+        <h1 onClick={() => navigate("/reviews")}>NC Games Reviews</h1>
       </div>
       <div className="header_buttons">
         <button onClick={() => navigate("/users")}>Users</button>
-        <button onClick={() => navigate("/")}>Reviews</button>
+        <button onClick={() => navigate("/reviews")}>Reviews</button>
       </div>
     </header>
   );

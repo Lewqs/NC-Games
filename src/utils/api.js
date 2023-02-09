@@ -7,3 +7,11 @@ const ncGames = axios.create({
 export const getReviews = () => {
   return ncGames.get("/reviews").then(({ data }) => data.reviews);
 };
+
+export const getReviewById = (review_id) => {
+  return ncGames.get(`/reviews/${review_id}`).then(({ data }) => data.review);
+};
+
+export const getUser = (username) => {
+  return ncGames.get(`/users/${username}`).then(({ data }) => data.user);
+};

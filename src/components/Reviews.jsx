@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ReviewsContext } from "../contexts/Reviews";
+import Loading from "./Loading";
 import ReviewCard from "./ReviewCard";
 
 const Reviews = () => {
-  const { reviews } = useContext(ReviewsContext);
+  const { reviews, loading } = useContext(ReviewsContext);
   let navigate = useNavigate();
+  if (loading) return <Loading />;
   return (
     <section className="reviews">
       <br />
