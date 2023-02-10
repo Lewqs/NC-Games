@@ -2,12 +2,11 @@
 
 :root {
   --background-colour: #1c1b1f;
-  --button-background-colour: #1c1b1f;
-  --background-hover-colour: #4a4458;
+  --button-background-colour: #4a4458;
+  --background-hover-colour: #1f1731;
   --primary-text-colour: #d0bcff;
-  --secondary-text-colour: #c1aeec;
+  --secondary-text-colour: #9a76e9;
   --border-colour: #938f99;
-  --dark-text-colour: #1c1b1f;
 }
 
 .App {
@@ -19,6 +18,7 @@ body {
   color: var(--primary-text-colour);
   font-family: "Roboto", sans-serif;
   margin: 0;
+  height: 100vh;
 }
 
 header {
@@ -42,6 +42,7 @@ button {
   border-radius: 5px;
   font-size: 18px;
   border: 1px solid var(--border-colour);
+  cursor: pointer;
 }
 
 .reviews {
@@ -51,20 +52,14 @@ button {
   width: 70%;
 }
 
-.reviews_add_button {
+.reviews-add-button {
   margin: 0 0 0 auto;
-}
-
-.reviews_add_button:hover {
-  color: var(--secondary-text-colour);
-  background-color: var(--background-hover-colour);
 }
 
 .review-card {
   display: flex;
   border: 1px solid var(--border-colour);
   border-radius: 2px;
-  flex-grow: 1;
 }
 
 .review-card-img {
@@ -90,17 +85,14 @@ a:active {
 
 .review-card-createdby {
   display: inline-flex;
-  flex-direction: column;
   color: var(--secondary-text-colour);
   margin: 0;
 }
 
-.full-date-and-time {
-  display: none;
-}
-
-.review-card-createdby:hover > .full-date-and-time {
-  display: block;
+.review-card-timestamp {
+  font-size: 12px;
+  margin-left: 5px;
+  align-self: center;
 }
 
 .right {
@@ -131,35 +123,35 @@ button:hover {
 }
 
 .review-title {
-  font-size: 24px;
+  font-size: 22px;
   margin-bottom: 10px;
 }
 
 .review-owner {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .review-owner h3 {
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 5px;
 }
 
 .review-owner h4 {
-  font-size: 16px;
+  font-size: 12px;
   color: var(--secondary-text-colour);
   margin: 0;
 }
 
 .review-body {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
 
 .review-image {
-  width: 100%;
+  aspect-ratio: 1;
   margin-bottom: 20px;
 }
 
@@ -212,15 +204,78 @@ button:hover {
   }
 }
 
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.comments-section {
+  padding: 20px;
+  border-top: 1px solid #8563ce2f;
+}
+
+.user-info {
+  display: flex;
+  align-items: flex-start;
+  margin-right: 20px;
+  flex-direction: row;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.username {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.comment-body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.timestamp {
+  align-self: flex-start;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #999;
+}
+
+.comment-text {
+  align-self: flex-start;
+}
+
+.vote-buttons {
+  display: flex;
+  align-items: center;
+}
+.vote-buttons > button {
+  padding: 10px 10px;
+  margin: 0 5px 0 0;
+  font-size: 16px;
+}
+
 @media only screen and (max-width: 700px) {
   h1 {
-    font-size: 1.2rem;
+    font-size: 18px;
   }
   h2 {
-    font-size: 0.8rem;
+    font-size: 12px;
   }
   p {
-    font-size: 0.6rem;
+    font-size: 9px;
   }
 
   .reviews {
@@ -230,6 +285,12 @@ button:hover {
     justify-content: center;
     text-align: left;
     width: 90%;
+  }
+
+  .review-card-timestamp {
+    font-size: 6px;
+    margin-left: 2px;
+    align-self: center;
   }
 
   .review-card {
@@ -242,7 +303,7 @@ button:hover {
     font-size: 10px;
   }
 
-  .reviews_add_button {
+  .reviews-add-button {
     padding: 5px 10px;
     font-size: 10px;
   }
@@ -257,9 +318,21 @@ button:hover {
     font-size: 14px;
   }
 
-  .review-statistics,
+  .review-votes,
+  .review-votes-btns > button,
+  .review-comment_count,
   .review-comment-btn,
-  .review-vote-btn {
-    font-size: 0.9rem;
+  vote-buttons > button {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .show {
+    width: 90%;
+  }
+  .vote-buttons > button {
+    padding: 5px 5px;
+    margin: 0 5px 0 0;
+    font-size: 12px;
   }
 }

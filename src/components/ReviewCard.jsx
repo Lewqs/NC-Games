@@ -15,9 +15,16 @@ const ReviewCard = ({ review }) => {
           <div className="review-card-details left">
             <h2 className="review-card-title">{review.title}</h2>
             <p className="review-card-createdby">
-              Created By {review.owner} | {timeDifference(review.created_at)}
-              <span className="full-date-and-time">
-                {fullDateAndTime(review.created_at)}
+              Created By {review.owner} ·
+              <span
+                className="review-card-timestamp"
+                onMouseLeave={(e) =>
+                  (e.target.innerText = timeDifference(review.created_at))
+                }
+                onMouseOver={(e) =>
+                  (e.target.innerText = fullDateAndTime(review.created_at))
+                }>
+                {timeDifference(review.created_at)}
               </span>
             </p>
           </div>

@@ -15,3 +15,9 @@ export const getReviewById = (review_id) => {
 export const getUser = (username) => {
   return ncGames.get(`/users/${username}`).then(({ data }) => data.user);
 };
+
+export const getComments = (review_id) => {
+  return ncGames
+    .get(`/reviews/${review_id}/comments`)
+    .then(({ data }) => data.comments);
+};

@@ -12,7 +12,7 @@ const Reviews = () => {
     <section className="reviews">
       <br />
       <button
-        className="reviews_add_button"
+        className="reviews-add-button"
         onClick={() => {
           navigate("/reviews/add");
         }}>
